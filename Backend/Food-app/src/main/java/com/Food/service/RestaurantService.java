@@ -4,9 +4,10 @@ import com.Food.dto.RestaurantDto;
 import com.Food.entity.Restaurant;
 import com.Food.entity.User;
 import com.Food.request.CreateRetaurantRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface RestaurantService {
     public Restaurant createRestaurant(CreateRetaurantRequest req, User user);
 

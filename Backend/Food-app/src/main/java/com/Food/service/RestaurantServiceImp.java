@@ -9,11 +9,13 @@ import com.Food.repository.RestaurantRepository;
 import com.Food.repository.UserRepository;
 import com.Food.request.CreateRetaurantRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class RestaurantServiceImp implements RestaurantService{
 
     @Autowired
@@ -114,11 +116,26 @@ public class RestaurantServiceImp implements RestaurantService{
         dto.setTitle(restaurant.getName());
         dto.setId(restaurantId);
 
-        if(user.getFavorites().contains(dto)){
-            user.getFavorites().remove(dto);
-        }else {
-            user.getFavorites().add(dto);
+
+        boolean isFav=false;
+        List<RestaurantDto>favorites=user.getFavorites();
+
+        for(RestaurantDto favorite:favorites){
+
+            if(favorite.getId().equals(restaurantId)){
+                isFav=true;
+                break;
+            }
+
         }
+        if(isFav){
+            favorites.removeIf(dd->dd.getId().equals(restaurantId));
+        }else {
+            //I think favorites is using the same memory location as user.getFavorites()
+            favorites.add(dto);
+        }
+
+
         userRepository.save(user);
 
 

@@ -1,5 +1,8 @@
-import { IconButton } from '@mui/material'
+import { Avatar, Badge, IconButton } from '@mui/material'
 import React from 'react'
+import SearchIcon from '@mui/icons-material/Search';
+import { pink } from '@mui/material/colors';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Header = () => {
 
@@ -9,7 +12,7 @@ const Header = () => {
       
     
       <div className='lg:mr-10 flex items-center space-x-4'>
-        <li className='cursor-pointer logo font-semibold text-gray-300 text-2xl '>Cuision Hub</li>
+        <li className='cursor-pointer logo font-semibold text-gray-300 text-2xl list-none '>Cuision Hub</li>
       </div>
 
     
@@ -18,9 +21,24 @@ const Header = () => {
         
         <div className=''>
 
-        <IconButton></IconButton>
+        <IconButton >
+          <SearchIcon sx={{fontSize:"1.5rem"}}/>
+        </IconButton>
+        </div>
+        <div className=''>
+        
+        <Avatar sx={{bgcolor:"white", color:pink[400]}}>S</Avatar>
+        
+        </div>
 
-
+        <div className=''>
+        
+        <IconButton >
+          <Badge color='secondary' badgeContent={3}>
+            <ShoppingCartIcon sx={{fontSize:"1.5rem"}}/>
+          </Badge>
+        </IconButton>
+        
         </div>
 
       </div>

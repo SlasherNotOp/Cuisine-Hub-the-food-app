@@ -1,4 +1,6 @@
 import React from 'react'
+import "./Home.css"
+import MultiItem from './MultiItem'
 
 const Home = () => {
   return (
@@ -18,6 +20,11 @@ const Home = () => {
 
     </div>
 
+    </section>
+
+    
+    <section>
+      <MultiItem/>
     </section>
 
       

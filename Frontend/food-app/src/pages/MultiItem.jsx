@@ -12,8 +12,16 @@ const MultiItem = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 4,
+    slidesToScroll: 2,
+
+    autoplay: true,
+    
+    autoplaySpeed:2000, 
+
+    arrows:false,
+
+
   };
 
   
@@ -22,11 +30,13 @@ const MultiItem = () => {
   
 
   return (
-    <div className='w-full'>
+    <div className=' slider-parent '>
       <Slider {...settings} >
         {
           TopMeal.map((item)=>{
+            return(
             <CarouselItem image={item.image} title={item.title}/>
+            )
           })
         }
 

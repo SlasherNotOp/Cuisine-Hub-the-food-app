@@ -1,11 +1,13 @@
-import { Card, Chip } from '@mui/material'
+import { Card, Chip, IconButton } from '@mui/material'
 import React from 'react'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import img1 from"";
+
 
 const RestaurantCart = () => {
   return (
-    <Card className='m-5 w-72 '>
+    <Card className=' w-72 '>
         <div className={ `${true?"cursor-pointer":"cursor-not-allowed"} relative`}>
             <img 
             className='w-full h-40 rounded-t-md object-cover' 
@@ -21,8 +23,16 @@ const RestaurantCart = () => {
         </div>
         <div className='p-4 textPart lg:flex w-full justify-between'>
           <div className='space-y-1'>
-            <p>Craving it all? Dive into our global fla...</p>
+            <p className='font-semibold text-lg'>Indian Fast food</p>
+            <p className='to-gray-500 text-sm '
+            >Craving it all? Dive into our global fla...</p>
 
+          </div>
+
+          <div>
+            <IconButton>
+              {true?<FavoriteIcon/>:<FavoriteBorderIcon/>}
+            </IconButton>
           </div>
 
         </div>

@@ -6,6 +6,7 @@ import Header from './Component/Header'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { darkTheme } from './Theme/DarkTheme'
 import Home from './pages/Home'
+import RestaurantDetails from './pages/RestaurantDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +18,8 @@ function App() {
 
       
       <Header/>
-      <Home/>
+      {/* <Home/> */}
+      <RestaurantDetails/>
 
       
       
